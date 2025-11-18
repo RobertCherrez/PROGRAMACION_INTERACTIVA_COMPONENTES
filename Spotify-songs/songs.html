@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Player</title>
+<link rel="stylesheet" href="../Public/css/style.css">
+<link rel="icon" href="../assets/favicon.ico">
+
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li class="brand"><img src="./logo.png" alt="Spotify" /> <a href="../index.html">Spotify</a></li>
+    <li class="header"><a href="../index.html">Inicio</a></li>
+    <li><a href="../premium.html">Premium</a></li>
+  </ul>
+</nav>
+
+<spotify-player id="player">
+    <spotify-song index="0" song-name="The Neighbourhood - Leather Weather" file-path="./songs/1.mp3" cover-path="./covers/1.jpg" duration="02:57"></spotify-song>
+    <spotify-song index="1" song-name="Ed Sheeran - Shape of You" file-path="./songs/2.mp3" cover-path="./covers/2.jpg" duration="04:22"></spotify-song>
+    <spotify-song index="2" song-name="Lil Uzi Vert - Chill Bae" file-path="./songs/3.mp3" cover-path="./covers/3.jpg" duration="02:18"></spotify-song>
+    <spotify-song index="3" song-name="Justin Bieber - Yukon" file-path="./songs/5.mp3" cover-path="./covers/5.jpg" duration="03:02"></spotify-song>
+
+</spotify-player>
+
+<spotify-controls></spotify-controls>
+
+<script type="module" src="../Public/js/main-spotify.js"></script>
+
+</body>
+</html>

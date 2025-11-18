@@ -1,0 +1,123 @@
+/* importing two Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* ...existing code... */
+:root{
+  --bg: #121212;
+  --panel: #181818;
+  --muted: #b3b3b3;
+  --accent: #1DB954;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --max-width: 980px;
+  --gap: 16px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg, var(--bg), #0d0d0d);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px;
+}
+
+/* NAV */
+nav{
+  width:100%;
+  max-width:var(--max-width);
+  margin-bottom:18px;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:10px 12px;
+  margin:0;
+  background:transparent;
+}
+nav li.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-right:auto;
+}
+nav li.brand img{ width:34px; height:34px; object-fit:contain; }
+nav a{ color:#fff; text-decoration:none; font-weight:600; opacity:0.95; }
+nav li a:hover{ opacity:1; color:var(--accent) }
+
+/* MAIN LAYOUT */
+main, spotify-player {
+  width:100%;
+  max-width:var(--max-width);
+}
+
+/* PLAYER HOST (light DOM) */
+spotify-player{
+  display:block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  margin-bottom:12px;
+}
+
+/* cover + meta shown in player shadow; style host for spacing */
+spotify-player::part(player){
+  gap:var(--gap);
+}
+
+/* SONG LIST (hosts) */
+slot, .song-list, spotify-player > slot { display:block; margin-top:12px; }
+spotify-song{
+  display:block;
+  margin:6px 0;
+  padding:8px 10px;
+  border-radius:10px;
+  transition: background .18s, transform .12s;
+  cursor:pointer;
+  background:transparent;
+}
+spotify-song:hover{ background: rgba(255,255,255,0.02); transform: translateY(-1px); }
+
+/* when spotify-song host receives .active the component's shadow applies highlight;
+   add a subtle border on host too for contrast */
+spotify-song.active{ box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
+
+/* Controls */
+spotify-controls{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  justify-content:center;
+  margin-top:8px;
+}
+spotify-controls button,
+spotify-controls::part(button){
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  padding:10px 14px;
+  margin:0 6px;
+  border-radius:8px;
+  cursor:pointer;
+  transition: background .12s, color .12s, transform .08s;
+  font-weight:600;
+}
+spotify-controls button:hover{ background: rgba(255,255,255,0.03); color:#fff; transform: translateY(-2px); }
+
+/* small responsive */
+@media (max-width:640px){
+  body{ padding:12px; }
+  spotify-player{ padding:12px; }
+  nav ul{ gap:8px; }
+  nav li.header{ display:none; }
+}
