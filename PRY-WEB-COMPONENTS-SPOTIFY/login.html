@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./Public/css/main.css" />
+		<link rel="stylesheet" href="./Public/css/fonts.css" />
+		<link rel="stylesheet" href="./Public/css/animation.css">
+		<link rel="stylesheet" href="./Public/css/responsive.css">
+		<title>Login</title>
+		<link rel="icon" href="https://www.scdn.co/i/_global/favicon.png" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+</head>
+<body>
+    <button id="btnLogin">Iniciar sesión</button>
+
+<!-- POPUP LOGIN -->
+<div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="loginUser" placeholder="Usuario">
+        <input type="password" id="loginPass" placeholder="Contraseña">
+        <button id="loginSubmit">Entrar</button>
+
+        <p>No tienes cuenta?</p>
+
+        <button id="btnShowRegister">Crear cuenta</button>
+    </div>
+</div>
+
+<!-- POPUP REGISTRO -->
+<div id="registerModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Crear Cuenta</h2>
+        <input type="text" id="registerUser" placeholder="Usuario">
+        <input type="password" id="registerPass" placeholder="Contraseña">
+        <button id="registerSubmit">Registrar</button>
+    </div>
+</div>
+
+</body>
+</html>
